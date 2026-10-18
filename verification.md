@@ -16,3 +16,7 @@ Run both services from the repository root with `docker compose up --build`. The
 | The checked-in application tests pass in the project runtime. | Verified: frontend tests passed (5), ESLint passed, the TypeScript/Vite build passed, and backend tests passed in the Docker image (15). The backend emitted a Starlette/httpx deprecation warning; the frontend build emitted a bundle-size warning. |
 
 The context-documentation task itself was checked against the cited entry points, route implementations, package scripts, test files, and Compose configuration. No product behavior was changed as part of this project-context work.
+
+## Rule Validation Exercise
+
+Task: verify whether the dashboard displays all backend metrics features and whether its period label describes the API data. Following `.agents/rules/financial-dashboard.md`, I traced the request in `frontend/src/App.tsx`, compared it with route definitions and date generation in `backend/app/routes.py`, and checked the route tests. The evidence rejected the all-features claim and confirmed the static-period mismatch; both corrections are recorded above. The exercise changed project documentation only.
